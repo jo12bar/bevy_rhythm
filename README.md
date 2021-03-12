@@ -16,6 +16,8 @@ You'll also need a nightly build of Rust. So, using Rustup:
 
 ```bash
 $ rustup toolchain install nightly
+info: syncing channel updates for 'nightly-arch-platform-compiler'
+# More output follows...
 ```
 
 ## Song Credits
