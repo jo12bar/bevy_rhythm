@@ -1,15 +1,17 @@
-use bevy::{input::system::exit_on_esc_system, prelude::*};
+use bevy::{input::system::exit_on_esc_system, prelude::*, render::pass::ClearColor};
 
 mod arrows;
 mod audio;
 mod consts;
 mod score;
+mod shaders;
 mod types;
 mod ui;
 
 use arrows::ArrowsPlugin;
 use audio::AudioPlugin;
 use score::ScoreResource;
+use shaders::ShadersPlugin;
 use ui::UIPlugin;
 
 fn main() {
@@ -24,12 +26,14 @@ fn main() {
             ..Default::default()
         })
         .init_resource::<ScoreResource>()
+        .add_resource(ClearColor(Color::rgb(0.0, 0.0, 0.0)))
         .add_startup_system(setup.system())
         .add_plugins(DefaultPlugins)
         .add_system(exit_on_esc_system.system())
         .add_plugin(ArrowsPlugin)
         .add_plugin(UIPlugin)
         .add_plugin(AudioPlugin)
+        .add_plugin(ShadersPlugin)
         .run();
 }
 
