@@ -11,7 +11,10 @@ use bevy::{
 };
 
 mod background;
+mod target_arrows;
+
 use background::*;
+use target_arrows::*;
 
 /// A plugin for all the shaders in the game.
 pub struct ShadersPlugin;
@@ -23,7 +26,9 @@ impl Plugin for ShadersPlugin {
             .add_system(update_time.system())
             .add_system(update_resolution.system())
             .add_startup_system(setup_background.system())
-            .add_system(update_background_size.system());
+            .add_system(update_background_size.system())
+            .add_startup_system(setup_target_arrows.system())
+            .add_system(correct_arrow_event_listener.system());
     }
 }
 

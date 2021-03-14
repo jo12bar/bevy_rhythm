@@ -10,6 +10,7 @@ impl Plugin for ArrowsPlugin {
         app
             // Init resources
             .init_resource::<ArrowMaterialResource>()
+            .init_resource::<Events<CorrectArrowEvent>>()
             // Add systems
             .add_startup_system(setup_target_arrows.system())
             .add_system(spawn_arrows.system())
@@ -164,12 +165,20 @@ fn setup_target_arrows(commands: &mut Commands, materials: Res<ArrowMaterialReso
     }
 }
 
+/// An event that gets sent when the user correctly hits an arrow.
+#[derive(Debug)]
+pub struct CorrectArrowEvent {
+    pub direction: Directions,
+    pub points: usize,
+}
+
 /// Despawns the arrows when they reach the end if the correct button is clicked.
 fn despawn_arrows(
     commands: &mut Commands,
     query: Query<(Entity, &Transform, &Arrow)>,
     keyboard_input: Res<Input<KeyCode>>,
     mut score: ResMut<ScoreResource>,
+    mut correct_arrow_events: ResMut<Events<CorrectArrowEvent>>,
 ) {
     for (entity, transform, arrow) in query.iter() {
         let pos = transform.translation.x;
@@ -180,7 +189,13 @@ fn despawn_arrows(
         {
             commands.despawn(entity);
 
-            let _points = score.increase_correct(TARGET_POSITION - pos);
+            let points = score.increase_correct(TARGET_POSITION - pos);
+
+            // Send an event:
+            correct_arrow_events.send(CorrectArrowEvent {
+                direction: arrow.direction,
+                points,
+            });
         }
 
         // Despawn arrows after they leave the screen
