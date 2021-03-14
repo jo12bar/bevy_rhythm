@@ -1,13 +1,13 @@
-use crate::{arrows::InitialArrowSpawnTime, score::ScoreResource};
+use crate::{consts::*, score::ScoreResource, time::ControlledTime};
 use bevy::prelude::*;
 
 /// All the UI!
 pub struct UIPlugin;
 impl Plugin for UIPlugin {
     fn build(&self, app: &mut AppBuilder) {
-        app.add_startup_system(setup_ui.system())
-            .add_system(update_time_text.system())
-            .add_system(update_score_text.system());
+        app.on_state_enter(APP_STATE_STAGE, AppState::Game, setup_ui.system())
+            .on_state_update(APP_STATE_STAGE, AppState::Game, update_time_text.system())
+            .on_state_update(APP_STATE_STAGE, AppState::Game, update_score_text.system());
     }
 }
 
@@ -84,12 +84,8 @@ fn setup_ui(
 
 struct TimeText;
 
-fn update_time_text(
-    time: Res<Time>,
-    initial_arrow_spawn_time: Res<InitialArrowSpawnTime>,
-    mut query: Query<(&mut Text, &TimeText)>,
-) {
-    let secs = time.seconds_since_startup() - initial_arrow_spawn_time.0;
+fn update_time_text(time: Res<ControlledTime>, mut query: Query<(&mut Text, &TimeText)>) {
+    let secs = time.seconds_since_startup() - SONG_START_DELAY;
 
     // Don't do anything before the song starts!
     if secs < 0.0 {

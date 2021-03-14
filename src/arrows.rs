@@ -1,5 +1,5 @@
-use crate::types::*;
 use crate::{consts::*, score::ScoreResource};
+use crate::{time::ControlledTime, types::*};
 use bevy::prelude::*;
 
 /// Spawns and controls arrows.
@@ -12,10 +12,14 @@ impl Plugin for ArrowsPlugin {
             .init_resource::<ArrowMaterialResource>()
             .init_resource::<Events<CorrectArrowEvent>>()
             // Add systems
-            .add_startup_system(setup_target_arrows.system())
-            .add_system(spawn_arrows.system())
-            .add_system(move_arrows.system())
-            .add_system(despawn_arrows.system());
+            .on_state_enter(
+                APP_STATE_STAGE,
+                AppState::Game,
+                setup_target_arrows.system(),
+            )
+            .on_state_update(APP_STATE_STAGE, AppState::Game, spawn_arrows.system())
+            .on_state_update(APP_STATE_STAGE, AppState::Game, move_arrows.system())
+            .on_state_update(APP_STATE_STAGE, AppState::Game, despawn_arrows.system());
     }
 }
 
@@ -52,23 +56,19 @@ struct Arrow {
     direction: Directions,
 }
 
-/// The time that the initial arrow should be spawned at.
-pub struct InitialArrowSpawnTime(pub f64);
-
 /// Spawns arrows.
 fn spawn_arrows(
     commands: &mut Commands,
     mut song_config: ResMut<SongConfig>,
     materials: Res<ArrowMaterialResource>,
-    time: Res<Time>,
-    initial_arrow_spawn_time: Res<InitialArrowSpawnTime>,
+    time: Res<ControlledTime>,
 ) {
     // We get the current time since startup (secs) and the time since the last
     // iteration (secs_last). This lets us check if there are any arrows that
     // should spawn in the current window.
 
     // Song starts whenever we configure it to start, so subtract that value.
-    let secs = time.seconds_since_startup() - initial_arrow_spawn_time.0;
+    let secs = time.seconds_since_startup() - SONG_START_DELAY;
     let secs_last = secs - time.delta_seconds_f64();
 
     // Counts the number of arrows that need to be spawned and removed from the
@@ -119,7 +119,7 @@ fn spawn_arrows(
 }
 
 /// Moves the arrows forwards.
-fn move_arrows(time: Res<Time>, mut query: Query<(&mut Transform, &Arrow)>) {
+fn move_arrows(time: Res<ControlledTime>, mut query: Query<(&mut Transform, &Arrow)>) {
     for (mut transform, arrow) in query.iter_mut() {
         transform.translation.x += time.delta_seconds() * arrow.speed.value();
 

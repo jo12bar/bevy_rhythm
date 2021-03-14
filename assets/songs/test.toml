@@ -2,7 +2,7 @@ name = "Test song"
 filename = "Electronic Fantasy.mp3"
 
 arrows = [
-    { click_time = 1.00, speed = "Slow", direction = "Up" },
+    { click_time = 0.00, speed = "Slow", direction = "Up" },
     { click_time = 3.00, speed = "Slow", direction = "Down" },
     { click_time = 5.00, speed = "Fast", direction = "Left" },
     { click_time = 5.00, speed = "Slow", direction = "Right" },

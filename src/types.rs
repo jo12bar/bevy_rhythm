@@ -90,11 +90,6 @@ impl ArrowTime {
             direction: arrow.direction,
         }
     }
-
-    /// Gets the time that the arrow will be clicked at.
-    pub fn get_click_time(&self) -> f64 {
-        self.spawn_time + (DISTANCE / self.speed.value()) as f64
-    }
 }
 
 /// Keeps track of a list of all the arrows in a song, including their speeds

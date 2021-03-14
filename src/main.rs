@@ -3,15 +3,20 @@ use bevy::{input::system::exit_on_esc_system, prelude::*, render::pass::ClearCol
 mod arrows;
 mod audio;
 mod consts;
+mod menu;
 mod score;
 mod shaders;
+mod time;
 mod types;
 mod ui;
 
 use arrows::ArrowsPlugin;
 use audio::AudioPlugin;
+use consts::*;
+use menu::MenuPlugin;
 use score::ScoreResource;
 use shaders::ShadersPlugin;
+use time::TimePlugin;
 use ui::UIPlugin;
 
 fn main() {
@@ -25,6 +30,12 @@ fn main() {
             height: 600.0,
             ..Default::default()
         })
+        .add_resource(State::new(AppState::Menu))
+        .add_stage_after(
+            stage::UPDATE,
+            APP_STATE_STAGE,
+            StateStage::<AppState>::default(),
+        )
         .init_resource::<ScoreResource>()
         .add_resource(ClearColor(Color::rgb(0.0, 0.0, 0.0)))
         .add_startup_system(setup.system())
@@ -34,18 +45,13 @@ fn main() {
         .add_plugin(UIPlugin)
         .add_plugin(AudioPlugin)
         .add_plugin(ShadersPlugin)
+        .add_plugin(MenuPlugin)
+        .add_plugin(TimePlugin)
         .run();
 }
 
-fn setup(commands: &mut Commands, asset_server: Res<AssetServer>) {
-    let config = types::load_config("test.toml", &asset_server);
-
-    // Start songs five seconds after startup:
-    let initial_arrow_spawn_time = config.arrows[0].get_click_time() + 5.0;
-
+fn setup(commands: &mut Commands) {
     commands
         .spawn(Camera2dBundle::default())
-        .spawn(CameraUiBundle::default())
-        .insert_resource(config)
-        .insert_resource(arrows::InitialArrowSpawnTime(initial_arrow_spawn_time));
+        .spawn(CameraUiBundle::default());
 }
