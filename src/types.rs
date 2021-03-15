@@ -17,16 +17,27 @@ pub enum Directions {
 }
 
 impl Directions {
-    /// Checks if a key corresponding to this direction has been pressed.
-    pub fn key_just_pressed(&self, input: &Input<KeyCode>) -> bool {
-        let keys = match self {
+    fn to_keycodes(&self) -> [KeyCode; 2] {
+        match self {
             Self::Up => [KeyCode::Up, KeyCode::W],
             Self::Down => [KeyCode::Down, KeyCode::S],
             Self::Left => [KeyCode::Left, KeyCode::A],
             Self::Right => [KeyCode::Right, KeyCode::D],
-        };
+        }
+    }
+
+    /// Checks if a key corresponding to this direction has *just* been pressed.
+    pub fn key_just_pressed(&self, input: &Input<KeyCode>) -> bool {
+        let keys = self.to_keycodes();
 
         keys.iter().any(|code| input.just_pressed(*code))
+    }
+
+    /// Checks if a key corresponding to this direction is *currently* being pressed.
+    pub fn key_pressed(&self, input: &Input<KeyCode>) -> bool {
+        let keys = self.to_keycodes();
+
+        keys.iter().any(|code| input.pressed(*code))
     }
 
     /// Returns the correct rotation for an arrow with this direction

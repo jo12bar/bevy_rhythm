@@ -3,6 +3,7 @@ use bevy::{input::system::exit_on_esc_system, prelude::*, render::pass::ClearCol
 mod arrows;
 mod audio;
 mod consts;
+mod map_maker;
 mod menu;
 mod score;
 mod shaders;
@@ -13,6 +14,7 @@ mod ui;
 use arrows::ArrowsPlugin;
 use audio::AudioPlugin;
 use consts::*;
+use map_maker::MapMakerPlugin;
 use menu::MenuPlugin;
 use score::ScoreResource;
 use shaders::ShadersPlugin;
@@ -47,6 +49,7 @@ fn main() {
         .add_plugin(ShadersPlugin)
         .add_plugin(MenuPlugin)
         .add_plugin(TimePlugin)
+        .add_plugin(MapMakerPlugin)
         .run();
 }
 

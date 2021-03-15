@@ -1,0 +1,417 @@
+name = "Custom song"
+filename = "Electronic Fantasy.mp3"
+
+[[arrows]]
+click_time = 1.7456081
+speed = "Slow"
+direction = "Up"
+
+[[arrows]]
+click_time = 2.6422782
+speed = "Slow"
+direction = "Down"
+
+[[arrows]]
+click_time = 3.0548774
+speed = "Slow"
+direction = "Left"
+
+[[arrows]]
+click_time = 3.6205444
+speed = "Slow"
+direction = "Right"
+
+[[arrows]]
+click_time = 4.2243148
+speed = "Slow"
+direction = "Up"
+
+[[arrows]]
+click_time = 4.5526272
+speed = "Slow"
+direction = "Left"
+
+[[arrows]]
+click_time = 4.6278129
+speed = "Slow"
+direction = "Down"
+
+[[arrows]]
+click_time = 4.737609
+speed = "Slow"
+direction = "Right"
+
+[[arrows]]
+click_time = 5.0487827
+speed = "Slow"
+direction = "Left"
+
+[[arrows]]
+click_time = 5.4503999
+speed = "Slow"
+direction = "Down"
+
+[[arrows]]
+click_time = 5.9263962
+speed = "Slow"
+direction = "Up"
+
+[[arrows]]
+click_time = 6.0887514
+speed = "Slow"
+direction = "Left"
+
+[[arrows]]
+click_time = 6.297208
+speed = "Slow"
+direction = "Right"
+
+[[arrows]]
+click_time = 6.4517343
+speed = "Slow"
+direction = "Down"
+
+[[arrows]]
+click_time = 6.6777139
+speed = "Slow"
+direction = "Left"
+
+[[arrows]]
+click_time = 6.8824449
+speed = "Slow"
+direction = "Up"
+
+[[arrows]]
+click_time = 7.0803398
+speed = "Slow"
+direction = "Left"
+
+[[arrows]]
+click_time = 7.2814484
+speed = "Slow"
+direction = "Up"
+
+[[arrows]]
+click_time = 7.4644811
+speed = "Slow"
+direction = "Left"
+
+[[arrows]]
+click_time = 7.6414027
+speed = "Slow"
+direction = "Down"
+
+[[arrows]]
+click_time = 7.8168519
+speed = "Slow"
+direction = "Right"
+
+[[arrows]]
+click_time = 8.0070164
+speed = "Slow"
+direction = "Up"
+
+[[arrows]]
+click_time = 8.2191197
+speed = "Slow"
+direction = "Left"
+
+[[arrows]]
+click_time = 8.4183838
+speed = "Slow"
+direction = "Down"
+
+[[arrows]]
+click_time = 8.6384728
+speed = "Slow"
+direction = "Left"
+
+[[arrows]]
+click_time = 8.8014016
+speed = "Slow"
+direction = "Down"
+
+[[arrows]]
+click_time = 9.0305374
+speed = "Slow"
+direction = "Left"
+
+[[arrows]]
+click_time = 9.2075347
+speed = "Slow"
+direction = "Down"
+
+[[arrows]]
+click_time = 9.4330953
+speed = "Slow"
+direction = "Right"
+
+[[arrows]]
+click_time = 9.6359776
+speed = "Slow"
+direction = "Down"
+
+[[arrows]]
+click_time = 9.8672907
+speed = "Slow"
+direction = "Up"
+
+[[arrows]]
+click_time = 10.3358741
+speed = "Slow"
+direction = "Left"
+
+[[arrows]]
+click_time = 10.7657469
+speed = "Slow"
+direction = "Down"
+
+[[arrows]]
+click_time = 11.224582
+speed = "Slow"
+direction = "Right"
+
+[[arrows]]
+click_time = 11.2640587
+speed = "Slow"
+direction = "Up"
+
+[[arrows]]
+click_time = 11.2640587
+speed = "Slow"
+direction = "Down"
+
+[[arrows]]
+click_time = 11.3464064
+speed = "Slow"
+direction = "Left"
+
+[[arrows]]
+click_time = 11.4826347
+speed = "Slow"
+direction = "Up"
+
+[[arrows]]
+click_time = 11.490635900000001
+speed = "Slow"
+direction = "Down"
+
+[[arrows]]
+click_time = 11.5936441
+speed = "Slow"
+direction = "Left"
+
+[[arrows]]
+click_time = 11.6754841
+speed = "Slow"
+direction = "Down"
+
+[[arrows]]
+click_time = 12.0984144
+speed = "Slow"
+direction = "Up"
+
+[[arrows]]
+click_time = 12.2972444
+speed = "Slow"
+direction = "Left"
+
+[[arrows]]
+click_time = 12.508234
+speed = "Slow"
+direction = "Down"
+
+[[arrows]]
+click_time = 12.8965418
+speed = "Slow"
+direction = "Right"
+
+[[arrows]]
+click_time = 13.3143747
+speed = "Slow"
+direction = "Up"
+
+[[arrows]]
+click_time = 13.3218046
+speed = "Slow"
+direction = "Left"
+
+[[arrows]]
+click_time = 13.9561484
+speed = "Slow"
+direction = "Right"
+
+[[arrows]]
+click_time = 14.1299057
+speed = "Slow"
+direction = "Down"
+
+[[arrows]]
+click_time = 14.5773147
+speed = "Slow"
+direction = "Left"
+
+[[arrows]]
+click_time = 14.9579069
+speed = "Slow"
+direction = "Up"
+
+[[arrows]]
+click_time = 14.965449
+speed = "Slow"
+direction = "Left"
+
+[[arrows]]
+click_time = 15.5867872
+speed = "Slow"
+direction = "Right"
+
+[[arrows]]
+click_time = 15.6322871
+speed = "Slow"
+direction = "Down"
+
+[[arrows]]
+click_time = 15.693537599999999
+speed = "Slow"
+direction = "Left"
+
+[[arrows]]
+click_time = 16.378245
+speed = "Slow"
+direction = "Right"
+
+[[arrows]]
+click_time = 16.4332628
+speed = "Slow"
+direction = "Up"
+
+[[arrows]]
+click_time = 16.4871069
+speed = "Slow"
+direction = "Left"
+
+[[arrows]]
+click_time = 17.0879235
+speed = "Slow"
+direction = "Right"
+
+[[arrows]]
+click_time = 17.1254814
+speed = "Slow"
+direction = "Down"
+
+[[arrows]]
+click_time = 17.2014117
+speed = "Slow"
+direction = "Left"
+
+[[arrows]]
+click_time = 17.4863013
+speed = "Slow"
+direction = "Up"
+
+[[arrows]]
+click_time = 17.6817878
+speed = "Slow"
+direction = "Right"
+
+[[arrows]]
+click_time = 17.8625239
+speed = "Slow"
+direction = "Down"
+
+[[arrows]]
+click_time = 18.0695241
+speed = "Slow"
+direction = "Left"
+
+[[arrows]]
+click_time = 18.2374428
+speed = "Slow"
+direction = "Up"
+
+[[arrows]]
+click_time = 18.4375734
+speed = "Slow"
+direction = "Left"
+
+[[arrows]]
+click_time = 18.4458687
+speed = "Slow"
+direction = "Right"
+
+[[arrows]]
+click_time = 18.8628866
+speed = "Slow"
+direction = "Left"
+
+[[arrows]]
+click_time = 18.8712878
+speed = "Slow"
+direction = "Down"
+
+[[arrows]]
+click_time = 18.8796223
+speed = "Slow"
+direction = "Right"
+
+[[arrows]]
+click_time = 19.2903022
+speed = "Slow"
+direction = "Up"
+
+[[arrows]]
+click_time = 19.2983424
+speed = "Slow"
+direction = "Left"
+
+[[arrows]]
+click_time = 19.7273378
+speed = "Slow"
+direction = "Right"
+
+[[arrows]]
+click_time = 19.7627497
+speed = "Slow"
+direction = "Down"
+
+[[arrows]]
+click_time = 19.8336699
+speed = "Slow"
+direction = "Left"
+
+[[arrows]]
+click_time = 19.9527287
+speed = "Slow"
+direction = "Right"
+
+[[arrows]]
+click_time = 20.0381511
+speed = "Slow"
+direction = "Up"
+
+[[arrows]]
+click_time = 20.1406406
+speed = "Slow"
+direction = "Left"
+
+[[arrows]]
+click_time = 20.3783145
+speed = "Slow"
+direction = "Right"
+
+[[arrows]]
+click_time = 20.6080939
+speed = "Slow"
+direction = "Down"
+
+[[arrows]]
+click_time = 20.8251354
+speed = "Slow"
+direction = "Left"
+
+[[arrows]]
+click_time = 21.0316298
+speed = "Slow"
+direction = "Up"
